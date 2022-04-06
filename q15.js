@@ -1,9 +1,4 @@
-// Time Limit Exceeded
-
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
+// (!!!) Time Limit Exceeded
 
 function arrayEquals(a, b) {
     return Array.isArray(a) &&
@@ -11,7 +6,10 @@ function arrayEquals(a, b) {
         a.length === b.length &&
         a.every((val, index) => val === b[index]);
 }
-
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var threeSum = function (nums) {
     if (nums.length < 3) return []
 
