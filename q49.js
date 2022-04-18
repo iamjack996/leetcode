@@ -3,12 +3,7 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-
-    // console.log(strs[0].split('').sort().join('') )
-    let arrayByKey = [
-        // {'test': []},
-        // { 'aet': ['val', 'val2'] }
-    ]
+    let arrayByKey = []
 
     for (i = 0; i < strs.length; i++) {
         let rowKey = strs[i].split('').sort().join('')
@@ -18,7 +13,6 @@ var groupAnagrams = function (strs) {
             return (Object.keys(obj)[0] == rowKey)
         })
 
-        // console.log(findIndex)
         if (findIndex > -1) {
             arrayByKey[findIndex][rowKey].push(strs[i])
         } else {
@@ -26,10 +20,7 @@ var groupAnagrams = function (strs) {
         }
     }
 
-    // console.log(arrayByKey)
-
     let result = []
-
     arrayByKey.forEach(obj => {
         result = result.concat(Object.values(obj)) // .push(Object.values(obj))
     })
