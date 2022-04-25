@@ -1,3 +1,22 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function (n) {
+
+    let a = []
+    a[1] = 1
+    a[2] = 2
+
+    for (i = 3; i <= n; i++) {
+        a[i] = a[i - 1] + a[i - 2]
+    }
+
+    return a[n]
+};
+
+
+
 // (!!!) Output Limit Exceeded
 
 let count = 0
