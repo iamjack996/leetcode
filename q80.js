@@ -3,23 +3,20 @@
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-
-    let first = []
-    let second = []
+    let exists = {}
     let count = 0
     for (i = 0; i < nums.length; i++) {
-        if (!first.includes(nums[i])) {
+        if (!exists[nums[i]]) {
             count++
-            first.push(nums[i])
+            exists[nums[i]] = 1
         } else {
-            if (!second.includes(nums[i])) {
-                count++
-                second.push(nums[i])
-            } else {
+            if (exists[nums[i]] > 1) {
                 nums.splice(i, 1)
                 i--
+            } else {
+                count++
+                exists[nums[i]] = 2
             }
         }
     }
-    return count
 };
